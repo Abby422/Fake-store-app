@@ -1,18 +1,17 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext} from 'react'
 import Product from './Product'
 import { shopContext } from "../context/Shop";
 
 
-const Products = () => { 
-    const [name] =useState(null);   
+const Products = () => {    
     const {products} = useContext(shopContext)
     return (
         <div className='products'>
-            { name === null? 
+            <h4>Products</h4>
             <> 
             {products? products.map(product=>(<Product product={product} key={product.id}/>)): "Loading..."}
-            </> : null
-        }
+            </> 
+        
         </div>
     )
 }

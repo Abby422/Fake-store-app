@@ -5,17 +5,22 @@ import axios from "axios";
 
 
 function SpecificCat() {
-    let {categories} = useParams()
+    const params = useParams()
+    let {categories} = params;
     const [product, setproduct] = useState([])
     
     useEffect(() => {
       axios.get(`https://fakestoreapi.com/products/category/${categories}`).then(res => setproduct(res.data))
-    }, [])
+      setproduct([])
+    }, [categories])
     
 
     return (
-      <div className='products'>
-            {product? product.map(products=>(<Product product={products} key={products.id}/>)): "Loading..."}         
+      <div>
+        <h4 style={{color: 'cadetblue'}}>{categories.toUpperCase()}</h4>
+        <div className='products'>
+          {product? product.map(products=>(<Product product={products} key={products.id}/>)): "Loading..."}         
+        </div>
       </div>
     )
 }

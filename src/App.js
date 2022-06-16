@@ -19,7 +19,6 @@ function App() {
     
       <div className="App">
         <Navbar/>
-        <h4>Products</h4>
         <div className='body'>
         <div className='category'><Categories /></div>
         <div>

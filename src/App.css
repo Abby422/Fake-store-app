@@ -44,13 +44,14 @@
 .category{
   border: 1px solid cadetblue;
   background-color: cadetblue;
-  width: 45vw;
+  width: 20vw;
   top: 0px;
 }
 .categories{
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  margin: 80px;
+  height: 100vh;
 }
 .category-link a{
   text-decoration: none;
